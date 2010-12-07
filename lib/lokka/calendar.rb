@@ -20,6 +20,10 @@ module Lokka
             @calendar_posts << Date.new(post.created_at.year, post.created_at.month, post.created_at.day)
           end
           @calendar_posts.uniq!
+
+          content_for :header do
+            haml :'plugin/lokka-calendar/views/header', :layout => false
+          end
         end
       end
 
@@ -62,10 +66,6 @@ module Lokka
       first_day.upto(last_day) {|d| @calendar_days << d}
 
       haml :'plugin/lokka-calendar/views/index', :layout => false
-    end
-
-    def header
-      haml :'plugin/lokka-calendar/views/header', :layout => false
     end
   end
 end
