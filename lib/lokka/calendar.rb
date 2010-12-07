@@ -63,5 +63,9 @@ module Lokka
 
       haml :'plugin/lokka-calendar/views/index', :layout => false
     end
+
+    def header
+      haml :'plugin/lokka-calendar/views/header', :layout => false
+    end
   end
 end
