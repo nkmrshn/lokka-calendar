@@ -10,7 +10,8 @@
     %tr{:class => "week_#{w_idx}"}
       - week.each_with_index do |day, d_idx|
         %td{:class => "day_#{d_idx}"}
-          - if @calendar_posts.include?(day)
-            %a{:href => "/#{day.year}/#{day.strftime("%m")}/#{day.strftime("%d")}/"}= day.day
-          - else
-            = day.day
+          - if @today.month == day.month
+            - if @calendar_posts.include?(day)
+              %a{:href => "/#{day.year}/#{day.strftime("%m")}/#{day.strftime("%d")}/"}= day.day
+            - else
+              = day.day

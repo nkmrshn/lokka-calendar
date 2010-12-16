@@ -52,10 +52,10 @@ module Lokka
   module Helpers
     def calendar
       @calendar_days = []
-      today = @calendar || Date.today
-      next_month = today >> 1
+      @today = @calendar || Date.today
+      next_month = @today >> 1
 
-      first_day = Date.new(today.year, today.month, 1)
+      first_day = Date.new(@today.year, @today.month, 1)
       @calendar_prev = @calendar << 1
       @calendar_next = @calendar >> 1
       last_day = Date.new(next_month.year, next_month.month, 1) - 1
