@@ -17,11 +17,11 @@ table.calendar a {
   text-decoration: none;
 }
 
-table.calendar a:link, a:visited {
+table.calendar a:link, table.calendar a:visited {
   color: #cccccc;
 }
 
-table.calendar a:hover, a:active {
+table.calendar a:hover, table.calendar a:active {
   background-color: #41527E;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
