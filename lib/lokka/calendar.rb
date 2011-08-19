@@ -13,7 +13,7 @@ module Lokka
 
         unless /^\/admin\/*/ =~ path
           @calendar_posts = []
-          posts = Post.all(:fields => [:created_at]).
+          posts = Post.published.all(:fields => [:created_at]).
                        all(:created_at.gte => DateTime.new(@calendar.year, @calendar.month, 1)).
                        all(:created_at.lt => DateTime.new(@calendar.year, @calendar.month, 1) >> 1)
           posts.each do |post|
@@ -32,7 +32,7 @@ module Lokka
         @theme_types << :entries
 
         y, m, d = year.to_i, month.to_i, day.to_i
-        @posts = Post.all(:created_at.gte => DateTime.new(y, m, d)).
+        @posts = Post.published.all(:created_at.gte => DateTime.new(y, m, d)).
                       all(:created_at.lt => DateTime.new(y, m, d) + 1).
                       page(params[:page], :per_page => settings.per_page)
 
