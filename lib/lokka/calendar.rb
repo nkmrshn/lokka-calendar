@@ -39,7 +39,7 @@ module Lokka
         @title = "#{year}/#{month}/#{day} - #{@site.title}"
 
         @bread_crumbs = []
-        @bread_crumbs.push({:name => 'Home', :link => '/'})
+        @bread_crumbs.push({:name => t.home, :link => '/'})
         @bread_crumbs.push({:name => "#{year}", :link => "/#{year}/"})
         @bread_crumbs.push({:name => "#{year}/#{month}", :link => "/#{year}/#{month}/"})
         @bread_crumbs.push({:name => "#{year}/#{month}/#{day}", :link => "/#{year}/#{month}/#{day}/"})
