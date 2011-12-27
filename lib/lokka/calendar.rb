@@ -38,11 +38,11 @@ module Lokka
 
         @title = "#{year}/#{month}/#{day} - #{@site.title}"
 
-        @bread_crumbs = BreadCrumb.new
-        @bread_crumbs.add('Home', '/')
-        @bread_crumbs.add("#{year}", "/#{year}/")
-        @bread_crumbs.add("#{year}/#{month}", "/#{year}/#{month}/")
-        @bread_crumbs.add("#{year}/#{month}/#{day}", "/#{year}/#{month}/#{day}/")
+        @bread_crumbs = []
+        @bread_crumbs.push({:name => 'Home', :link => '/'})
+        @bread_crumbs.push({:name => "#{year}", :link => "/#{year}/"})
+        @bread_crumbs.push({:name => "#{year}/#{month}", :link => "/#{year}/#{month}/"})
+        @bread_crumbs.push({:name => "#{year}/#{month}/#{day}", :link => "/#{year}/#{month}/#{day}/"})
 
         render_detect :monthly, :entries
       end
